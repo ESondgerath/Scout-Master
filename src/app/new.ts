@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
@@ -23,19 +22,16 @@ import {
   MatSnackBarModule,} from "@angular/material";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
- declarations: [
-   AppComponent,
-   LoginComponent,
-   AuthComponent
- ],
- imports: [
-   FormsModule,
-   BrowserModule,
-   MatButtonModule,
+  declarations: [
+    AppComponent,
+    LoginComponent
+  ],
+  imports: [
+    BrowserModule,
+    MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
     MatButtonToggleModule,
@@ -54,13 +50,9 @@ import { AuthComponent } from './auth/auth.component';
     MatToolbarModule,
     MatTooltipModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
- ],
- exports: [
-   FormsModule,
-   BrowserModule,
- ],
- providers: [],
- bootstrap: [AppComponent]
+    FormsModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
