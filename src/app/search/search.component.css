@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+  }
+h1{
+  text-align: center;
+}
+hr{
+  width: 75%
+}
+.mat-players-table{
+  width: 90%;
+  margin-left: 5%;
+}
+table{
+  width: 200px;
+}
+th{
+  width: 50px;
+}
+.addToTeam{
+  color: blue;
+  background-color: #2fef3c;
+  border-radius: 10%;
+  font-size: 12px;
+}
+.addPlayerBtn{
+  margin-left: 1600px;
+  font-size: larger;
+  border-radius: 10%;
+}

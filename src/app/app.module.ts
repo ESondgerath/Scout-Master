@@ -17,17 +17,22 @@ import {
   MatTableModule,
   MatToolbarModule,
   MatTooltipModule, 
-  MatSnackBarModule,} from "@angular/material";
+  MatSnackBarModule,
+  } from "@angular/material";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchPlayerComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SearchPlayerComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,9 @@ import { HomeComponent } from './home/home.component';
     MatSnackBarModule,
     MatTableModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
