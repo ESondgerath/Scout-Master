@@ -1,14 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
+import { 
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatButtonToggleModule,
+  MatDialogModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatMenuModule,
+  MatPaginatorModule,
+  MatRadioModule,
+  MatSidenavModule,
+  MatSlideToggleModule,
+  MatTableModule,
+  MatToolbarModule,
+  MatTooltipModule, 
+  MatSnackBarModule,
+  } from "@angular/material";
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import 'hammerjs';
+import { HomeComponent } from './home/home.component';
+import { SearchPlayerComponent } from './search/search.component';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './ui/navbar/navbar.component';
 import { FooterComponent } from './ui/footer/footer.component';
 import { LayoutComponent } from './ui/layout/layout.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { UserService } from './user.service';
 import { PlayerService } from './player.service';
@@ -16,6 +38,8 @@ import { PlayerService } from './player.service';
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    SearchPlayerComponent,
     NavbarComponent,
     FooterComponent,
     LayoutComponent,
@@ -26,6 +50,16 @@ import { PlayerService } from './player.service';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatPaginatorModule,
+    MatRadioModule,
+    MatSidenavModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    BrowserAnimationsModule,
+    FormsModule,
     MatIconModule,
     MatButtonModule,
     BrowserAnimationsModule,
