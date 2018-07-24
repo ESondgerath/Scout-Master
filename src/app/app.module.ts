@@ -1,52 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { 
-  MatButtonModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatButtonToggleModule,
-  MatDialogModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatMenuModule,
-  MatPaginatorModule,
-  MatRadioModule,
-  MatSidenavModule,
-  MatSlideToggleModule,
-  MatTableModule,
-  MatToolbarModule,
-  MatTooltipModule, 
-  MatSnackBarModule,} from "@angular/material";
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './ui/navbar/navbar.component';
+import { FooterComponent } from './ui/footer/footer.component';
+import { LayoutComponent } from './ui/layout/layout.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
-    MatButtonModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatButtonToggleModule,
-    MatDialogModule,
-    MatFormFieldModule,
+    LayoutModule,
     MatGridListModule,
-    MatIconModule,
-    MatInputModule,
+    MatCardModule,
     MatMenuModule,
-    MatPaginatorModule,
-    MatRadioModule,
-    MatSidenavModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatTableModule,
-    MatToolbarModule,
-    MatTooltipModule
+    MatIconModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    CdkTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
