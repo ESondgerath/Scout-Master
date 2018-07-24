@@ -1,0 +1,26 @@
+.cardForSignup{
+    height: 50%;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    background-color: #86bad3;
+}
+.cardForSignup a {
+    text-decoration: none;
+    color: #D9514E;
+}
+.cardForSignup a:hover {
+    text-decoration: underline;
+}
+.matButton-signup-card-signup student{
+    float: right;
+}
+.matButton-signup-card-signup button{
+    margin: 1%
+}
+.matButton-signup-card-signup button:hover{
+    color: #D9514E;
+    background-color: white;
+    border: 1px solid #D9514E;
+}
