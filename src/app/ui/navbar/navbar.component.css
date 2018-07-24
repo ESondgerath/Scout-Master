@@ -1,0 +1,54 @@
+.elevenfiftylogo {
+    max-height: 48px;
+}
+
+.navbar {
+    /* height: 62px; */
+    background-color: rgb(225, 225, 225);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    z-index: 1;
+}
+
+/* @media (min-width: 992px) {
+    .navbar-expand {
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+    }
+} */
+
+.navbar-space {
+    flex: 1 1 auto;
+    /* margin-left: 1rem;
+    margin-right: 1rem;
+    line-height: 62px;
+    display: inline-flex;
+    vertical-align: middle; */
+} 
+
+/* .navbar-logo {
+    flex: 1 1 20%;
+    line-height: 62px;
+    display: inline-flex;
+    vertical-align: middle; 
+} */
+
+/* .navbar-buttons {
+    flex: 1 1 20%;
+    line-height: 62px;
+    display: inline-flex;
+    vertical-align: middle;
+} */
+
+.nav-btn {
+    margin-right: 0.5em;
+    background-color: rgba(200, 200, 200, 1);
+    border-radius: 0.25em;
+}

@@ -22,29 +22,30 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import 'hammerjs';
-
-import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchPlayerComponent } from './search/search.component';
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './ui/navbar/navbar.component';
+import { FooterComponent } from './ui/footer/footer.component';
+import { LayoutComponent } from './ui/layout/layout.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchPlayerComponent,
+    NavbarComponent,
+    FooterComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
-    MatButtonModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatButtonToggleModule,
-    MatDialogModule,
-    MatFormFieldModule,
+    LayoutModule,
     MatGridListModule,
-    MatIconModule,
-    MatInputModule,
+    MatCardModule,
     MatMenuModule,
     MatPaginatorModule,
     MatRadioModule,
@@ -56,6 +57,11 @@ import { SearchPlayerComponent } from './search/search.component';
     MatTooltipModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatIconModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    CdkTableModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
