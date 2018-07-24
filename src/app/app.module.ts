@@ -32,8 +32,9 @@ import { LayoutComponent } from './ui/layout/layout.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CdkTableModule } from '@angular/cdk/table';
-import { UserService } from './user.service';
-import { PlayerService } from './player.service';
+import { UserService } from './services/user.service';
+import { PlayerService } from './services/player.service';
+import { AppRoutingModule } from './app-routing.module'
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { PlayerService } from './player.service';
     LayoutComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     LayoutModule,
     MatGridListModule,
