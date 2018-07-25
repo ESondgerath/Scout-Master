@@ -37,7 +37,11 @@ import {
   MatToolbarModule,
   MatTooltipModule, 
   MatSnackBarModule,
+  MatFormField,
+  MatSortModule
   } from "@angular/material";
+import { ProfileComponent } from './profile/profile.component';
+
 
 @NgModule({
  declarations: [
@@ -50,7 +54,8 @@ import {
     LayoutComponent,
     AuthComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     AppRoutingModule,
@@ -72,15 +77,17 @@ import {
     MatIconModule,
     MatButtonModule,
     CdkTableModule,
+    MatToolbarModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatCheckboxModule,
     MatButtonToggleModule,
     MatDialogModule,
-    MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatSortModule
   ],
   providers: [UserService, PlayerService],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

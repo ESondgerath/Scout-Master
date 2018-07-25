@@ -24,7 +24,21 @@ th{
   font-size: 12px;
 }
 .addPlayerBtn{
-  margin-left: 83%;
+  margin-left: 80.6%;
   font-size: larger;
   border-radius: 10%;
+}
+th.mat-sort-header-sorted{
+  color: black;
+}
+.mat-form-field{
+  font-size: 14px;
+  width: 25%;
+  margin-left: 13%;
+}
+button{
+  color: primary;
+}
+tr:hover{
+  background-color: lightgray;
 }
