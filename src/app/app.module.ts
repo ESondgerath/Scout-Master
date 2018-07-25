@@ -39,6 +39,7 @@ import {
   MatSnackBarModule,
   MatFormField,
   } from "@angular/material";
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import {
     LayoutComponent,
     AuthComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     AppRoutingModule,
