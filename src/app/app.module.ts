@@ -19,8 +19,9 @@ import {
   MatToolbarModule,
   MatTooltipModule, 
   MatSnackBarModule,
+  MatFormField,
   } from "@angular/material";
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import 'hammerjs';
 import { HomeComponent } from './home/home.component';
@@ -65,7 +66,9 @@ import { PlayerService } from './player.service';
     BrowserAnimationsModule,
     CdkTableModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [UserService, PlayerService],
   bootstrap: [AppComponent]
