@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     // async submitHandler(){
     //   this.loading = true;
 
-    //   const formValue = this.employerForm.value;
+    //   const formValue = this.loginForm.value;
     //   try{
     //     await this.backend.collection('').add(formValue);
     //     this.success = true;
