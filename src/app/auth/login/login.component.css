@@ -1,0 +1,29 @@
+.loginCard{
+    height: 50%;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    background-color: #86bad3;
+}
+.loginButtons{
+    margin-bottom: 5%;
+    display: inline-block;
+    width: 100%;
+    text-align-last: right;
+}
+.loginButtons button:hover {
+    color: #D9514E;
+    background-color: white;
+    border: 1px solid #D9514E;
+}
+.loginButtons .submit {
+    float: left;
+}
+.noaccount a {
+    text-decoration: none;
+    color: #D9514E;
+}
+.noaccount a:hover {
+    text-decoration: underline;
+}
