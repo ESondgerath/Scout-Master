@@ -49,7 +49,9 @@ import { LoginComponent } from './auth/login/login.component';
     NavbarComponent,
     FooterComponent,
     LayoutComponent,
-    AuthComponent
+    AuthComponent,
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     AppRoutingModule,
@@ -70,10 +72,14 @@ import { LoginComponent } from './auth/login/login.component';
     FormsModule,
     MatIconModule,
     MatButtonModule,
-    BrowserAnimationsModule,
     CdkTableModule,
-    MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCheckboxModule,
+    MatButtonToggleModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [UserService, PlayerService],
   bootstrap: [AppComponent]
