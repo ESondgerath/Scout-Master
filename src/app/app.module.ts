@@ -35,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CdkTableModule } from '@angular/cdk/table';
 import { UserService } from './user.service';
 import { PlayerService } from './player.service';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -68,9 +69,9 @@ import { PlayerService } from './player.service';
     MatToolbarModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [UserService, PlayerService],
-  bootstrap: [AppComponent]
+  exports: [RouterModule]
 })
 export class AppModule { }
