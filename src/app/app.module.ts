@@ -43,6 +43,7 @@ import {
 import { ProfileComponent } from './profile/profile.component';
 import { TeamComponent } from './team/team.component';
 import { AuthGuard } from './guard/auth.guard';
+import { AlertsComponent } from './alerts/alerts.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { AuthGuard } from './guard/auth.guard';
     LoginComponent,
     ProfileComponent,
     TeamComponent,
+    AlertsComponent,
   ],
   imports: [
     AppRoutingModule,
