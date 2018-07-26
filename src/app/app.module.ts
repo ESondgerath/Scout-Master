@@ -67,16 +67,13 @@ import { AlertsComponent } from './alerts/alerts.component';
     LoginComponent,
     ProfileComponent,
     TeamComponent,
-<<<<<<< HEAD
     AlertsComponent,
-=======
     HomeNavbarComponent,
     ProfileNavbarComponent,
     AuthNavbarComponent,
     SearchNavbarComponent,
     TeamNavbarComponent,
     NewPlayerModelComponent,
->>>>>>> b087557033229a8cc654110c382c96f21ce9b50b
   ],
   imports: [
     AppRoutingModule,
