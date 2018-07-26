@@ -42,3 +42,6 @@ button{
 tr:hover{
   background-color: lightgray;
 }
+th{
+  background-color: white;
+}

@@ -38,9 +38,10 @@ import {
   MatTooltipModule, 
   MatSnackBarModule,
   MatFormField,
-  MatSortModule
+  MatSortModule,
   } from "@angular/material";
 import { ProfileComponent } from './profile/profile.component';
+import { TeamComponent } from './team/team.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { ProfileComponent } from './profile/profile.component';
     AuthComponent,
     SignupComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    TeamComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -85,7 +87,7 @@ import { ProfileComponent } from './profile/profile.component';
     MatButtonToggleModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatSortModule
+    MatSortModule,
   ],
   providers: [UserService, PlayerService],
   bootstrap: [ AppComponent ]
