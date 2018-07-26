@@ -1,0 +1,110 @@
+<mat-card class="addPlayerCard">
+    <form (ngSubmit)="onAddPlayer(f)" #f='ngForm'>
+    
+    <h3>Add Player</h3>
+    <hr>
+<div>
+    Name:
+    <input class="form-control" type="text" name="name" ngModel>
+</div>
+<div>
+    Position:
+    <select name="position" class="position form-control" ngModel>
+      <option value="mental">Select</option>
+      <option value="forward">Forward</option>
+      <option value="defense">Defense</option>
+      <option value="goalie">Goalie</option>
+    </select>
+</div>
+
+<div>
+    Role:
+    <select name="role" class="role form-control" ngModel>
+      <option value="mental">Select</option>
+      <option value="target">Target</option>
+      <option value="advanced">Advanced</option>
+      <option value="pocher">Pocher</option>
+    </select>
+</div>
+<div>
+Technical:
+<select name="technical" class="technical form-control" ngModel>
+  <option value="mental">Select</option>
+  <option value="technical">1</option>
+  <option value="technical">2</option>
+  <option value="technical">3</option>
+  <option value="technical">4</option>
+  <option value="technical">5</option>
+  <option value="technical">6</option>
+  <option value="technical">7</option>
+  <option value="technical">8</option>
+  <option value="technical">9</option>
+  <option value="technical">10</option>
+  <option value="technical">11</option>
+  <option value="technical">12</option>
+  <option value="technical">13</option>
+  <option value="technical">14</option>
+  <option value="technical">15</option>
+  <option value="technical">16</option>
+  <option value="technical">17</option>
+  <option value="technical">18</option>
+  <option value="technical">19</option>
+  <option value="technical">20</option>
+</select>
+</div>
+<div>
+Mental:
+<select name="mental" class="mental form-control" ngModel>
+  <option value="mental">Select</option>
+  <option value="mental">1</option>
+  <option value="mental">2</option>
+  <option value="mental">3</option>
+  <option value="mental">4</option>
+  <option value="mental">5</option>
+  <option value="mental">6</option>
+  <option value="mental">7</option>
+  <option value="mental">8</option>
+  <option value="mental">9</option>
+  <option value="mental">10</option>
+  <option value="mental">11</option>
+  <option value="mental">12</option>
+  <option value="mental">13</option>
+  <option value="mental">14</option>
+  <option value="mental">15</option>
+  <option value="mental">16</option>
+  <option value="mental">17</option>
+  <option value="mental">18</option>
+  <option value="mental">19</option>
+  <option value="mental">20</option>
+</select>
+</div>
+<div>
+Physical:
+<select name="physical" class="physical form-control" ngModel>
+  <option value="physical">1</option>
+  <option value="physical">2</option>
+  <option value="physical">3</option>
+  <option value="physical">4</option>
+  <option value="physical">5</option>
+  <option value="physical">6</option>
+  <option value="physical">7</option>
+  <option value="physical">8</option>
+  <option value="physical">9</option>
+  <option value="physical">10</option>
+  <option value="physical">11</option>
+  <option value="physical">12</option>
+  <option value="physical">13</option>
+  <option value="physical">14</option>
+  <option value="physical">15</option>
+  <option value="physical">16</option>
+  <option value="physical">17</option>
+  <option value="physical">18</option>
+  <option value="physical">19</option>
+  <option value="physical">20</option>
+</select>
+</div>
+<div class="loginButtons">
+  <button mat-raised-button class="submit" (click)="print()">Submit</button>
+</div>
+</form>
+</mat-card>
