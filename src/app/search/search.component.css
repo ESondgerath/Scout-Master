@@ -1,3 +1,5 @@
+@import"~ionicons/dist/css/ionicons.min.css";
+
 table {
     width: 100%;
   }
@@ -17,17 +19,8 @@ table{
 th{
   width: 50px;
 }
-.addToTeam{
-  color: blue;
-  background-color: #2fef3c;
-  border-radius: 10%;
-  font-size: 12px;
-}
-.addPlayerBtn{
-  margin-left: 80.6%;
-  font-size: larger;
-  border-radius: 10%;
-}
+
+
 th.mat-sort-header-sorted{
   color: black;
 }
@@ -44,4 +37,38 @@ tr:hover{
 }
 th{
   background-color: white;
+}
+.addPlayerBtn{
+  margin-left: 80.6%;
+  font-size: larger;
+  border-radius: 10%;
+  background-color: rgb(0, 116, 239);
+  color: white;
+}
+.addToTeam{
+  color: black;
+  background-color: #2fef3c;
+  border-radius: 10%;
+  font-size: 23px;
+}
+.editPlayer{
+  color: black;
+  background-color: #efef2d;
+  border-radius: 10%;
+  font-size: 20px;
+}
+.deletePlayer{
+  color: black;
+  background-color: #d64942;
+  border-radius: 10%;
+  font-size: 20px;
+}
+.createBtn{
+  width: 24px;
+}
+.deleteBtn{
+  width: 24px;
+}
+.addBtn{
+  width: 24px;
 }
