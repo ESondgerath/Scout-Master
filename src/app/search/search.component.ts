@@ -1,27 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatSort, MatTableDataSource, } from '@angular/material';
 import {PageEvent} from '@angular/material';
-
-@Component({
-  selector: 'app-search',
-  styleUrls: ['search.component.css'],
-  templateUrl: 'search.component.html',
-})
-export class SearchPlayerComponent {
-  displayedColumns: string[] = ['name', 'position', 'role', 'technical','mental','physical'];
-  dataSource = PLAYER_DATA;
-
-  //MatPaginator Inputs
-  length = 200;
-  pageSize = 15;
-  pageSizeOptions: number[] = [15, 50, 100];
-
-  //MatPaginator Output
-  pageEvent: PageEvent;
-
-  setPageSizeOptions(setPageSizeOptionsInput: string){
-    this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
-  }
-}
 
 export interface Player {
   name: string;
@@ -47,9 +26,38 @@ const PLAYER_DATA: Player[] = [
   {name:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
   {name:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
   {name:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
-  
-
 ];
+
+@Component({
+  selector: 'app-search',
+  styleUrls: ['search.component.css'],
+  templateUrl: 'search.component.html',
+})
+export class SearchPlayerComponent implements OnInit {
+  displayedColumns: string[] = ['name', 'position', 'role', 'technical','mental','physical'];
+  dataSource = new MatTableDataSource(PLAYER_DATA);
+
+  applyFilter (filterValue: string){
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  @ViewChild(MatSort) sort: MatSort;
+
+  ngOnInit(){
+    this.dataSource.sort = this.sort;
+  }
+
+  length = 200;
+  pageSize = 15;
+  pageSizeOptions: number[] = [15, 50, 100];
+
+  pageEvent: PageEvent;
+
+  setPageSizeOptions(setPageSizeOptionsInput: string){
+    this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+  }
+}
+
+
 
 /**
  * @title Basic use of `<table mat-table>`
