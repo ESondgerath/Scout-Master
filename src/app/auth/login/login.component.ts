@@ -1,46 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { first } from 'rxjs/operators';
+import { AuthenticationService } from '../../services/authentication.service';
+import { AlertService } from '../../services/alert.service';
+import { flattenStyles } from '../../../../node_modules/@angular/platform-browser/src/dom/dom_renderer';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
-  //Form State
-  loading = false;
-  success = false;
-
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit() {
-    this.loginForm = this.fb.group({
-      username: ['', [
-        Validators.required
-      ]],
-      password: ['', [
-        Validators.required
-      ]]
-    });
+    loginForm: FormGroup;
+    loading = false;
+    submitted = false;
+    
+    constructor(
+        private auth: AuthenticationService,
+        private formBuilder: FormBuilder,
+        private router: Router,
+        private route: ActivatedRoute,
+        private alertService: AlertService
+    ) {
+        this.createForm();
     }
-    get username() {
-      return this.loginForm.get('username')
-    }
-    get password() {
-      return this.loginForm.get('password')
-    }
-    // async submitHandler(){
-    //   this.loading = true;
+    
+    ngOnInit(){
 
-    //   const formValue = this.employerForm.value;
-    //   try{
-    //     await this.backend.collection('').add(formValue);
-    //     this.success = true;
-    //   }catch(err){
-    //     console.log(err)
-    //   }
-    //   this.loading = false;
-    // }
-  }
+    }
+
+    createForm(): void {
+        this.loginForm = this.formBuilder.group({
+            username: new FormControl,
+            password: new FormControl
+        })
+    }
+
+    onSubmit() {
+        this.auth.login(this.loginForm.value)
+        console.log(this.loginForm.value)
+    }
+}
