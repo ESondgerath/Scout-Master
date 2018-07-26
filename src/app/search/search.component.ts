@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatSort, MatTableDataSource, } from '@angular/material';
-import {PageEvent} from '@angular/material';
+import {MatSort, MatTableDataSource, MatDialog, PageEvent } from '@angular/material';
+import {NewPlayerModelComponent} from './new-player-model/new-player-model.component';
 
 export interface Player {
   playername: string;
@@ -37,6 +37,8 @@ export class SearchPlayerComponent implements OnInit {
   displayedColumns: string[] = ['playername', 'position', 'role', 'technical','mental','physical'];
   dataSource = new MatTableDataSource(PLAYER_DATA);
 
+  constructor(public dialog: MatDialog){}
+
   applyFilter (filterValue: string){
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
@@ -44,6 +46,16 @@ export class SearchPlayerComponent implements OnInit {
 
   ngOnInit(){
     this.dataSource.sort = this.sort;
+  }
+  openDialog(): void {
+    let dialogRef = this.dialog.open(NewPlayerModelComponent, {
+      height: '40em',
+      width: '40em'
+    });
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log("it works");
+    // });
   }
 
   length = 200;

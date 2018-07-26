@@ -1,6 +1,8 @@
+<app-search-navbar></app-search-navbar>
+
 <h1>Players</h1>
 <hr>
-<button class="addPlayerBtn">Create Player</button>
+<button mat-raised-button class="addPlayerBtn" (click)="openDialog()">Create Player</button>
 <br>
 
 <mat-form-field>
@@ -37,7 +39,9 @@
   <ng-container matColumnDef="physical">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Physical </th>
     <td mat-cell *matCellDef="let player"> {{player.physical}}
-      <button class= "addToTeam" style="float: right;">Add to Team</button>  
+      <button class= "deletePlayer" style="float: right;"><span class="ion ion-md-close deleteBtn"></span></button>  
+      <button class= "editPlayer" style="float: right;"><span class="ion ion-md-create createBtn"></span></button>  
+      <button class= "addToTeam" style="float: right;"><span class= "addToTeam" style="float: right;" class="ion ion-md-add addBtn"></span></button>  
     </td> 
   </ng-container>
 

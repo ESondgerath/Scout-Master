@@ -1,3 +1,4 @@
+
 .logo {
     max-height: 48px;
 }
@@ -16,7 +17,6 @@
     padding-left: 1rem;
     z-index: 1;
 }
-
 /* @media (min-width: 992px) {
     .navbar-expand {
         flex-flow: row nowrap;
