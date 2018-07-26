@@ -1,6 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatSort, MatTableDataSource, MatDialog, } from '@angular/material';
-import {PageEvent} from '@angular/material';
+import {MatSort, MatTableDataSource, MatDialog, PageEvent } from '@angular/material';
 import {NewPlayerModelComponent} from './new-player-model/new-player-model.component';
 
 export interface Player {
@@ -54,9 +53,9 @@ export class SearchPlayerComponent implements OnInit {
       width: '40em'
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-    });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log("it works");
+    // });
   }
 
   length = 200;
