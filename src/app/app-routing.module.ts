@@ -11,7 +11,7 @@ import { TeamComponent } from './team/team.component'
 import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: '', component: HomeComponent},
   {path: 'home', redirectTo: ''},
   // {path: 'login', component: AuthComponent},
   {path: 'players', component: SearchPlayerComponent},
