@@ -42,6 +42,7 @@ import {
   } from "@angular/material";
 import { ProfileComponent } from './profile/profile.component';
 import { TeamComponent } from './team/team.component';
+import { AuthGuard } from './guard/auth.guard';
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { TeamComponent } from './team/team.component';
     ReactiveFormsModule,
     MatSortModule
   ],
-  providers: [UserService, PlayerService],
+  providers: [UserService, PlayerService, AuthGuard],
   bootstrap: [ AppComponent ]
 })
+
 export class AppModule { }
