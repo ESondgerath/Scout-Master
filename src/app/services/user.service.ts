@@ -1,55 +1,38 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from '../user'
-import { map } from 'rxjs/operators';
+import { User } from '../models/user';
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+const HttpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 }
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
+
 export class UserService {
+    private userURL = 'http://localhost:3000/user/';
 
-  private userURL = 'http://localhost:3000/user';
+    constructor(private http: HttpClient) { }
 
-  constructor(
-    private http: HttpClient
-  ) { }
+    //getAll
+    getUser() {
+        return this.http.get<User[]>(this.userURL, HttpOptions);
+    }
 
-  //Get All
-  getUser() {
-    return this.http.get(this.userURL);
-  }
+    getUserById(id: number) {
+        return this.http.get(this.userURL + id, HttpOptions);
+    }
 
-  //Get By ID
-  getUserById(id: number) {
-    const url = `${this.userURL}/${id}`;
-    return this.http.get(url)
-  }
+    createUser(user: User) {
+        return this.http.post(`${this.userURL}create`, user, HttpOptions);
+    }
 
-  addUser(user: User) {
-    return this.http.post(this.userURL, user, httpOptions)
-  }
+    update(user: User) {
+        return this.http.put(this.userURL + user.id, user, HttpOptions);
+    }
 
-  // addUser(User) {
-  //   return this.http.post("http://localhost:3000/user/create",(User), {headers: headers});
-  // }
-
-  deleteUser (user: User | number) {
-    const id = typeof user === 'number' ? user : user.id;
-    const url = `${this.userURL}/${id}`;
-
-    return this.http.delete(url, httpOptions)
-  }
-
-  // delete(userid) {
-  //   return this.http.delete(`http://localhost:3000/user/${userid}`);
-  // }
-
-  updateUser (user: User) {
-    return this.http.put(this.userURL, user, httpOptions)
-  }
+    delete(id: number) {
+        return this.http.delete(this.userURL + id, HttpOptions);
+    }
 }
