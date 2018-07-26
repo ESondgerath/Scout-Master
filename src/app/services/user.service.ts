@@ -16,23 +16,23 @@ export class UserService {
     constructor(private http: HttpClient) { }
 
     //getAll
-    getUser() {
-        return this.http.get<User[]>(this.userURL, HttpOptions);
-    }
+    // getUser() {
+    //     return this.http.get<User[]>(this.userURL, HttpOptions);
+    // }
 
-    getUserById(id: number) {
-        return this.http.get(this.userURL + id, HttpOptions);
-    }
+    // getUserById(id: number) {
+    //     return this.http.get(this.userURL + id, HttpOptions);
+    // }
 
-    createUser(user: User) {
-        return this.http.post(`${this.userURL}create`, user, HttpOptions);
-    }
+    // createUser(user: User) {
+    //     return this.http.post(`${this.userURL}create`, user, HttpOptions);
+    // }
 
-    update(user: User) {
-        return this.http.put(this.userURL + user.id, user, HttpOptions);
-    }
+    // update(user: User) {
+    //     return this.http.put(this.userURL + user.id, user, HttpOptions);
+    // }
 
-    delete(id: number) {
-        return this.http.delete(this.userURL + id, HttpOptions);
-    }
+    // delete(id: number) {
+    //     return this.http.delete(this.userURL + id, HttpOptions);
+    // }
 }

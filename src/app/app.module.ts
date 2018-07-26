@@ -49,8 +49,7 @@ import { ProfileNavbarComponent } from './profile/profile-navbar.component';
 import { TeamComponent } from './team/team.component';
 import { TeamNavbarComponent } from './team/team-navbar.component';
 import { NewPlayerModelComponent } from './search/new-player-model/new-player-model.component';
-
-
+import { AuthGuard } from './guard/auth.guard';
 
 
 @NgModule({
@@ -107,7 +106,8 @@ import { NewPlayerModelComponent } from './search/new-player-model/new-player-mo
   entryComponents:[
     NewPlayerModelComponent,
   ],
-  providers: [UserService, PlayerService],
+  providers: [UserService, PlayerService, AuthGuard],
   bootstrap: [ AppComponent ]
 })
+
 export class AppModule { }
