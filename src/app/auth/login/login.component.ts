@@ -38,8 +38,12 @@ export class LoginComponent implements OnInit {
             password: new FormControl
         })
     }
+    onSubmit() {
+      this.auth.login(this.loginForm.value)
+      console.log(this.loginForm.value)
+  }
+}
 
-<<<<<<< HEAD
     //   const formValue = this.loginForm.value;
     //   try{
     //     await this.backend.collection('').add(formValue);
@@ -49,11 +53,4 @@ export class LoginComponent implements OnInit {
     //   }
     //   this.loading = false;
     // }
-  }
-=======
-    onSubmit() {
-        this.auth.login(this.loginForm.value)
-        console.log(this.loginForm.value)
-    }
-}
->>>>>>> daf1388340d1cba5ffc1fa3bbad14e4153434260
+  

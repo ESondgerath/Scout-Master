@@ -1,6 +1,7 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatSort, MatTableDataSource, MatPaginator} from '@angular/material';
-import {PageEvent} from '@angular/material';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
+import { PageEvent } from '@angular/material';
+import { PlayerService } from '../services/player.service';
 
 @Component({
   selector: 'app-search',
