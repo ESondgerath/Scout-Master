@@ -1,29 +1,31 @@
+<app-auth-navbar></app-auth-navbar>
+
 <mat-card class="loginCard">
-  <form [formGroup]="loginForm" [hidden]="success" (ngSubmit)="submitHandler()">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   
   <h1>Scout Login</h1>
   <hr color="#D9514E" />
   <div>
     <mat-form-field>
-      <input matInput placeholder="username" formControlName="username">
-      <mat-error *ngIf="username.invalid && username.touched">
-        username is invalid
-      </mat-error>
+      <input type="text" matInput placeholder="Username" formControlName="username">
+      <!-- <mat-error *ngIf="username.invalid && username.touched">
+        Username is invalid
+      </mat-error> -->
     </mat-form-field>
     </div>
     <div>
     <mat-form-field>
-      <input matInput placeholder="password" formControlName="password">
-      <mat-error *ngIf="password.invalid && password.touched">
-        password is invalid
-      </mat-error>
+      <input type="password" matInput placeholder="Password" formControlName="password">
+      <!-- <mat-error *ngIf="password.invalid && password.touched">
+        Password is invalid
+      </mat-error> -->
     </mat-form-field>
   </div>
   <div class="loginButtons">
-    <button mat-raised-button class="submit" color="primary">Submit</button>
+    <button mat-raised-button class="submit" color="primary">Login</button>
   </div>
   <div class="noaccount">
-    <a routerLink="/signup">Don't have an account?</a>
+    <a routerLink="/signup">Don't have an account, Register Here?</a>
   </div>
   </form>
   </mat-card>

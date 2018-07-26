@@ -1,0 +1,28 @@
+.logo {
+    max-height: 48px;
+}
+
+.navbar {
+    background-color: rgb(225, 225, 225);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    z-index: 1;
+}
+.nav-btn {
+    margin-right: 0.5em;
+    background-color: rgba(200, 200, 200, 1);
+    border-radius: 0.25em;
+}
+.nav-btn-home{
+    margin-right: 0.5em;
+    background-color: rgba(200, 200, 200, 1);
+    border-radius: 0.25em;
+    margin-left:74%
+}

@@ -1,46 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthenticationService } from '../../services/authentication.service';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
-  //Form State
-  loading = false;
-  success = false;
+    private loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+    constructor(
+        private formBuilder: FormBuilder,
+        private auth: AuthenticationService
+    ) {
+        this.createForm();
+    }
 
-  ngOnInit() {
-    this.loginForm = this.fb.group({
-      username: ['', [
-        Validators.required
-      ]],
-      password: ['', [
-        Validators.required
-      ]]
-    });
-    }
-    get username() {
-      return this.loginForm.get('username')
-    }
-    get password() {
-      return this.loginForm.get('password')
-    }
-    // async submitHandler(){
-    //   this.loading = true;
+    ngOnInit() {
 
-    //   const formValue = this.loginForm.value;
-    //   try{
-    //     await this.backend.collection('').add(formValue);
-    //     this.success = true;
-    //   }catch(err){
-    //     console.log(err)
-    //   }
-    //   this.loading = false;
-    // }
-  }
+    }
+
+    createForm(): void {
+        this.loginForm = this.formBuilder.group({
+            username: new FormControl,
+            password: new FormControl
+        })
+    }
+    onSubmit() {
+        this.auth.login(this.loginForm.value)
+    }
+}
