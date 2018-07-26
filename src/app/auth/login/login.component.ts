@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../../services/authentication.service';
-import { AlertService } from '../../services/alert.service';
-import { flattenStyles } from '../../../../node_modules/@angular/platform-browser/src/dom/dom_renderer';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -14,21 +10,16 @@ import { flattenStyles } from '../../../../node_modules/@angular/platform-browse
 
 export class LoginComponent implements OnInit {
 
-    loginForm: FormGroup;
-    loading = false;
-    submitted = false;
-    
+    private loginForm: FormGroup;
+
     constructor(
-        private auth: AuthenticationService,
         private formBuilder: FormBuilder,
-        private router: Router,
-        private route: ActivatedRoute,
-        private alertService: AlertService
+        private auth: AuthenticationService
     ) {
         this.createForm();
     }
-    
-    ngOnInit(){
+
+    ngOnInit() {
 
     }
 
@@ -39,18 +30,6 @@ export class LoginComponent implements OnInit {
         })
     }
     onSubmit() {
-      this.auth.login(this.loginForm.value)
-      console.log(this.loginForm.value)
-  }
+        this.auth.login(this.loginForm.value)
+    }
 }
-
-    //   const formValue = this.loginForm.value;
-    //   try{
-    //     await this.backend.collection('').add(formValue);
-    //     this.success = true;
-    //   }catch(err){
-    //     console.log(err)
-    //   }
-    //   this.loading = false;
-    // }
-  

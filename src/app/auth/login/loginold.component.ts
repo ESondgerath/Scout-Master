@@ -1,9 +1,10 @@
 // import { Component, OnInit } from '@angular/core';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // import { Router, ActivatedRoute } from '@angular/router';
+// import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 // import { first } from 'rxjs/operators';
-// // import { AlertService } from '../../services/alert.service';
 // import { AuthenticationService } from '../../services/authentication.service';
+// import { AlertService } from '../../services/alert.service';
+// import { flattenStyles } from '../../../../node_modules/@angular/platform-browser/src/dom/dom_renderer';
 
 // @Component({
 //   selector: 'app-login',
@@ -13,65 +14,33 @@
 
 // export class LoginComponent implements OnInit {
 
-//   loginForm: FormGroup;
-//   loading = false;
-//   submitted = false;
-//   returnURL: string;
-//   users: Object[] = [];
-
-//   constructor(
-//     public formBuilder: FormBuilder,
-//     public route: ActivatedRoute,
-//     public router: Router,
-//     public auth: AuthenticationService) {}
-
-//   ngOnInit() {
-//     this.loginForm = this.formBuilder.group({
-//       username: ['', Validators.required],
-//       password: ['', Validators.required]
-//     });
-
-//     // this.auth.logout();
-
-//     // this.returnURL = this.route.snapshot.queryParams['returnURL'] || '/';
-//   }
+//     loginForm: FormGroup;
+//     loading = false;
+//     submitted = false;
     
-//   get f() {return this.loginForm.controls;}
+//     constructor(
+//         private auth: AuthenticationService,
+//         private formBuilder: FormBuilder,
+//         private router: Router,
+//         private route: ActivatedRoute,
+//         private alertService: AlertService
+//     ) {
+//         this.createForm();
+//     }
+    
+//     ngOnInit(){
 
-//   onSubmit() {
-//     this.submitted = true;
-
-//     if (this.loginForm.invalid) {
-//       return;
 //     }
 
-//     this.loading = true;
+//     createForm(): void {
+//         this.loginForm = this.formBuilder.group({
+//             username: new FormControl,
+//             password: new FormControl
+//         })
+//     }
 
-//     // var newUser = { user: {
-//     //   username: this.username,
-//     //   password: this.password
-//     // }}
-
-//     // this.auth.login(newUser)
-
-//     this.auth.login(this.f.username.value, this.f.password.value)
-//     // .pipe(first())
-//     // .subscribe(
-//     //   data => {
-//     //     this.router.navigate([this.returnURL]);
-//     //   }
-//     //   // error => {
-//     //   //   this.alertService.error(error);
-//     //   //   this.loading = false;
-//     //   // }
-//     // );
-
-//   }
-
-//   get username() {
-//     return this.loginForm.get('username')
-//   }
-//   get password() {
-//     return this.loginForm.get('password')
-//   }
+//     onSubmit() {
+//         this.auth.login(this.loginForm.value)
+//         console.log(this.loginForm.value)
+//     }
 // }

@@ -1,12 +1,10 @@
 // import { Injectable } from '@angular/core';
 // import { HttpHeaders, HttpClient } from '@angular/common/http';
-
 // import { Router } from '@angular/router';
-
 // import { User } from "../models/user"
 // import { Token } from "../models/Token"
-
 // import { Subject } from "rxjs"
+// import { map } from 'rxjs/operators';
 
 // const httpOptions = {
 //     headers: new HttpHeaders({
@@ -21,29 +19,44 @@
 // })
 
 // export class AuthenticationService {
-//     userInfo = new Subject<{}>();
 
-//     constructor(private http: HttpClient, private router: Router){  }
+//   constructor(private http: HttpClient, private router: Router) { }
 
-//     register(userData: User){
-//         return this.http.post(`${baseURL}/user/create`, userData, httpOptions)     
-//     }
+//   register(signupInfo) {
+//       return this.http.post<any>(`${baseURL}/user/create`, signupInfo)
+//   }
 
-//     login(loginInfo) {
-//         return this.http.post(`${baseURL}/user/login`, loginInfo)
-//         .subscribe((token: Token) => {
-//             localStorage.setItem("token", token.sessionToken);
+// //   login(username: string, password: string) {
+// //       return this.http.post<any>(`${baseURL}/user/login`, {username: username, password: password})
+//     //   .subscribe((res) => {
+//     //       localStorage.setItem("token", res.sessionToken)
+//     //       this.router.navigate(["/home"])
+//     //   },
+//     //   err => console.log(err)
+//     // );
+// //   }
 
-//             this.userInfo.next({
-//                 isLoggedin: true
-//             });
-//             this.router.navigate(["/search"])
-//         })
-//     }
+//   login(loginInfo) {
+//     return this.http.post<any>(`${baseURL}/user/login`, loginInfo)
+//     .subscribe((res) => {
+//         localStorage.setItem("token", res.sessionToken)
+//         this.router.navigate(["/dashboard"])
+//     },
+//         err => console.log(err)
+//     );
+//   }
 
-//     logout(){
-//         localStorage.clear();
-//         this.userInfo.next(false);
-//         this.router.navigate(["/home"])
-//     }
+//   logoutUser() {
+//       localStorage.removeItem('token')
+//     //   this.router.navigate(['/home'])
+//   }
+
+//   getToken() {
+//       return localStorage.getItem('token')
+//   }
+
+//   loggedIn() {
+//       return !!localStorage.getItem('token')
+//   }
+
 // }

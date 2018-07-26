@@ -15,7 +15,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CdkTableModule } from '@angular/cdk/table';
 import { UserService } from './services/user.service';
 import { PlayerService } from './services/player.service';
-import { AppRoutingModule } from './app-routing.module'
+import { AppRoutingModule } from './app-routing.module';
 import { AuthComponent } from './auth/auth.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -42,6 +42,7 @@ import {
   } from "@angular/material";
 import { ProfileComponent } from './profile/profile.component';
 import { TeamComponent } from './team/team.component';
+import { AuthGuard } from './guard/auth.guard';
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { TeamComponent } from './team/team.component';
     ReactiveFormsModule,
     MatSortModule,
   ],
-  providers: [UserService, PlayerService],
+  providers: [UserService, PlayerService, AuthGuard],
   bootstrap: [ AppComponent ]
 })
+
 export class AppModule { }
