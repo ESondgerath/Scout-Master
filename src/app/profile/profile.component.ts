@@ -20,11 +20,14 @@ export class ProfileComponent implements OnInit {
   email: string;
   password: string;
   confirmpassword: string;
+  
 
   constructor(
     // private auth: AuthenticationService,
     // private dialogRef: MatDialogRef<ProfileComponent>
   ) { }
+
+  
 
   ngOnInit() {
     // this.getUserInfo();

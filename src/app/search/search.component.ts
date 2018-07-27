@@ -16,7 +16,7 @@ import { tap } from 'rxjs/operators'
 })
 export class SearchPlayerComponent implements OnInit {
   displayedColumns: string[] = ['playername','position', 'role', 'technical','mental','physical',];
-  dataSource = new MatTableDataSource(PLAYER_DATA);
+  // dataSource = new MatTableDataSource(PLAYER_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
