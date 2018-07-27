@@ -1,5 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatSort, MatTableDataSource, MatDialog, PageEvent, MatPaginator } from '@angular/material';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSort, MatTableDataSource, MatPaginator, MatDialog, PageEvent } from '@angular/material';
+import { PlayerService } from '../services/player.service';
 import {NewPlayerModelComponent} from './new-player-model/new-player-model.component';
 
 export interface Player {
@@ -139,7 +140,9 @@ export class SearchPlayerComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator) paginator: MatPaginator; 
+
+  pageEvent: PageEvent;
 
   ngOnInit(){
     this.dataSource.sort = this.sort;
@@ -150,11 +153,11 @@ export class SearchPlayerComponent implements OnInit {
       height: '40em',
       width: '40em'
     });
+  }}
 
     // dialogRef.afterClosed().subscribe(result => {
     //   console.log("it works");
     // });
-  }
 
   length = 200;
   pageSize = 15;

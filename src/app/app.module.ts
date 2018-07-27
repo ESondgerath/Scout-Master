@@ -18,7 +18,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CdkTableModule } from '@angular/cdk/table';
 import { UserService } from './services/user.service';
 import { PlayerService } from './services/player.service';
-import { AppRoutingModule } from './app-routing.module'
+import { AppRoutingModule } from './app-routing.module';
 import { AuthComponent } from './auth/auth.component';
 import { AuthNavbarComponent } from './auth/auth-navbar.component';
 import { SignupComponent } from './auth/signup/signup.component';
