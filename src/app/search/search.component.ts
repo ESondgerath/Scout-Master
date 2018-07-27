@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatSort, MatTableDataSource, MatDialog, PageEvent } from '@angular/material';
+import {MatSort, MatTableDataSource, MatDialog, PageEvent, MatPaginator } from '@angular/material';
 import {NewPlayerModelComponent} from './new-player-model/new-player-model.component';
 
 export interface Player {
@@ -26,6 +26,102 @@ const PLAYER_DATA: Player[] = [
   {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
   {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
   {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'John Smith', position:'F',role:'Target',technical:17,mental:12,physical:13},
+  {playername:'Jack Daniel', position:'F',role:'Advanced',technical:19,mental:15,physical:8},
+  {playername:'James Doe', position:'F',role:'Pocher',technical:12,mental:7,physical:16},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'John Smith', position:'F',role:'Target',technical:17,mental:12,physical:13},
+  {playername:'Jack Daniel', position:'F',role:'Advanced',technical:19,mental:15,physical:8},
+  {playername:'James Doe', position:'F',role:'Pocher',technical:12,mental:7,physical:16},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'John Smith', position:'F',role:'Target',technical:17,mental:12,physical:13},
+  {playername:'Jack Daniel', position:'F',role:'Advanced',technical:19,mental:15,physical:8},
+  {playername:'James Doe', position:'F',role:'Pocher',technical:12,mental:7,physical:16},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'John Smith', position:'F',role:'Target',technical:17,mental:12,physical:13},
+  {playername:'Jack Daniel', position:'F',role:'Advanced',technical:19,mental:15,physical:8},
+  {playername:'James Doe', position:'F',role:'Pocher',technical:12,mental:7,physical:16},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'John Smith', position:'F',role:'Target',technical:17,mental:12,physical:13},
+  {playername:'Jack Daniel', position:'F',role:'Advanced',technical:19,mental:15,physical:8},
+  {playername:'James Doe', position:'F',role:'Pocher',technical:12,mental:7,physical:16},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'John Smith', position:'F',role:'Target',technical:17,mental:12,physical:13},
+  {playername:'Jack Daniel', position:'F',role:'Advanced',technical:19,mental:15,physical:8},
+  {playername:'James Doe', position:'F',role:'Pocher',technical:12,mental:7,physical:16},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'John Smith', position:'F',role:'Target',technical:17,mental:12,physical:13},
+  {playername:'Jack Daniel', position:'F',role:'Advanced',technical:19,mental:15,physical:8},
+  {playername:'James Doe', position:'F',role:'Pocher',technical:12,mental:7,physical:16},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'John Smith', position:'F',role:'Target',technical:17,mental:12,physical:13},
+  {playername:'Jack Daniel', position:'F',role:'Advanced',technical:19,mental:15,physical:8},
+  {playername:'James Doe', position:'F',role:'Pocher',technical:12,mental:7,physical:16},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
+  {playername:'Steve Price', position:'F',role:'Advanced',technical:10,mental:4,physical:19},
+  {playername:'Aaron Dame', position:'F',role:'Target',technical:8,mental:12,physical:15},
+  {playername:'Adam Demaree', position:'F',role:'Target',technical:14,mental:15,physical:18},
+  {playername:'Sam Darnold', position:'F',role:'Pocher',technical:16,mental:19,physical:20},
 ];
 
 @Component({
@@ -35,7 +131,7 @@ const PLAYER_DATA: Player[] = [
 })
 export class SearchPlayerComponent implements OnInit {
   displayedColumns: string[] = ['playername', 'position', 'role', 'technical','mental','physical'];
-  dataSource = new MatTableDataSource(PLAYER_DATA);
+  dataSource = new MatTableDataSource<Player>(PLAYER_DATA);
 
   constructor(public dialog: MatDialog){}
 
@@ -43,9 +139,11 @@ export class SearchPlayerComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit(){
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
   openDialog(): void {
     let dialogRef = this.dialog.open(NewPlayerModelComponent, {
@@ -60,18 +158,11 @@ export class SearchPlayerComponent implements OnInit {
 
   length = 200;
   pageSize = 15;
-  pageSizeOptions: number[] = [15, 50, 100];
+  pageSizeOptions: number[] = [15, 30, 100];
 
-  pageEvent: PageEvent;
+  // pageEvent: PageEvent;
 
-  setPageSizeOptions(setPageSizeOptionsInput: string){
-    this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
-  }
+  // setPageSizeOptions(setPageSizeOptionsInput: string){
+  //   this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+  // }
 }
-
-
-
-/**
- * @title Basic use of `<table mat-table>`
- */
-
