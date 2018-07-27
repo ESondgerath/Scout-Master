@@ -18,7 +18,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CdkTableModule } from '@angular/cdk/table';
 import { UserService } from './services/user.service';
 import { PlayerService } from './services/player.service';
-import { AppRoutingModule } from './app-routing.module'
+import { AppRoutingModule } from './app-routing.module';
 import { AuthComponent } from './auth/auth.component';
 import { AuthNavbarComponent } from './auth/auth-navbar.component';
 import { SignupComponent } from './auth/signup/signup.component';
@@ -50,6 +50,7 @@ import { TeamComponent } from './team/team.component';
 import { TeamNavbarComponent } from './team/team-navbar.component';
 import { NewPlayerModelComponent } from './search/new-player-model/new-player-model.component';
 import { AuthGuard } from './guard/auth.guard';
+import { AlertsComponent } from './alerts/alerts.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { AuthGuard } from './guard/auth.guard';
     LoginComponent,
     ProfileComponent,
     TeamComponent,
+    AlertsComponent,
     HomeNavbarComponent,
     ProfileNavbarComponent,
     AuthNavbarComponent,

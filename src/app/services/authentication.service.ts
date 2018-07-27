@@ -23,6 +23,7 @@ export class AuthenticationService {
     return this.http.post<any>(`${baseURL}/user/login`, loginInfo)
     .subscribe((res) => {
         localStorage.setItem("token", res.sessionToken)
+        localStorage.setItem("userid", res.params.id)
         this.router.navigate(["/home"])
     },
         err => console.log(err)
@@ -41,5 +42,9 @@ export class AuthenticationService {
   loggedIn() {
       return !!localStorage.getItem('token')
   }
+
+//   updateUser() {
+//       return this.http.put(`${baseURL}/user/update/${localStorage}.id`)
+//   }
 
 }

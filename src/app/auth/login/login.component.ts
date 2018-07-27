@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
             password: new FormControl
         })
     }
-
     onSubmit() {
         this.auth.login(this.loginForm.value)
     }
