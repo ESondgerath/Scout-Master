@@ -1,14 +1,18 @@
-<app-search-navbar></app-search-navbar>
+<!-- <app-search-navbar></app-search-navbar> -->
 
 <h1>Players</h1>
 <hr>
 <button mat-raised-button class="addPlayerBtn" (click)="openDialog()">Create Player</button>
 <br>
 
+<form [formGroup]="angForm" novalidate>
+  <div class="form-group">
+
 <mat-form-field>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
 
+<div class="mat-players-table">
 <table matSort style="margin: auto; width: 75%" mat-table [dataSource]="dataSource" class="mat-players-table">
 
   <ng-container matColumnDef="playername"  >
@@ -49,9 +53,8 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
-<mat-paginator
-  [length]="length"
-  [pageSize]="pageSize"
-  [pageSizeOptions]="pageSizeOptions"
-  (page)="pageEvent = $event">
-</mat-paginator>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+  </div>
+  </form>

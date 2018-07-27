@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Player } from '../models/player';
 
 const HttpOptions = {
@@ -16,12 +17,15 @@ export class PlayerService {
     constructor(private http: HttpClient) { }
 
     //getAll
-    getPlayer() {
-        return this.http.get<Player[]>(this.playerURL, HttpOptions);
+    // getPlayer() {
+    //     return this.http.get<Player[]>(this.playerURL, HttpOptions);
+    // }
+    getPlayer(): Observable<Player[]>{
+        return this.http.get<Player[]>(this.playerURL);
     }
 
-    getPlayerById(id: number) {
-        return this.http.get(this.playerURL + id, HttpOptions);
+    getPlayerById(playername: string) {
+        return this.http.get(this.playerURL + playername, HttpOptions);
     }
 
     addPlayer(player: Player) {
@@ -29,10 +33,10 @@ export class PlayerService {
     }
 
     updatePlayer(player: Player) {
-        return this.http.put(this.playerURL + player.id, player, HttpOptions);
+        return this.http.put(this.playerURL + player.playername, player, HttpOptions);
     }
 
-    deletePlayer(id: number) {
-        return this.http.delete(this.playerURL + id, HttpOptions);
+    deletePlayer(playername: string) {
+        return this.http.delete(this.playerURL + playername, HttpOptions);
     }
 }
