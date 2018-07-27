@@ -43,8 +43,8 @@ export class AuthenticationService {
       return !!localStorage.getItem('token')
   }
 
-  updateUser() {
-      return this.http.put(`${baseURL}/user/update/${localStorage}.id`)
-  }
+//   updateUser() {
+//       return this.http.put(`${baseURL}/user/update/${localStorage}.id`)
+//   }
 
 }
