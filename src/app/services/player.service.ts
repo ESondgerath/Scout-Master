@@ -19,25 +19,15 @@ export class PlayerService {
     constructor(private http: HttpClient, private router: Router) { }
 
     //getAll
-    getPlayer(): Observable<any> {
-        return this.http.get(this.playerURL);
+    // getPlayer() {
+    //     return this.http.get<Player[]>(this.playerURL, HttpOptions);
+    // }
+    getPlayer(): Observable<Player[]>{
+        return this.http.get<Player[]>(this.playerURL);
     }
 
-    findPlayer(id:number, filter = '', sortOrder = "asc", pageNumber = 0, pageSize = 15): Observable<Player[]> {
-            return this.http.get(this.playerURL, {
-                params: new HttpParams()
-                    .set('id', id.toString())
-                    .set('filter', filter)
-                    .set('sortOrder', sortOrder)
-                    .set('pageNumber', pageNumber.toString())
-                    .set('pageSize', pageSize.toString())
-            }).pipe(
-                map(res => res["payload"])
-            );
-        }
-
-    getPlayerById(id: number): Observable<Player> {
-        return this.http.get<Player>(`${this.playerURL}details/` + id);
+    getPlayerById(playername: string) {
+        return this.http.get(this.playerURL + playername, HttpOptions);
     }
 
     addPlayer(player: Player) {
@@ -45,10 +35,10 @@ export class PlayerService {
     }
 
     updatePlayer(player: Player) {
-        return this.http.put(this.playerURL + player.playername, player);
+        return this.http.put(this.playerURL + player.playername, player, HttpOptions);
     }
 
     deletePlayer(playername: string) {
-        return this.http.delete(this.playerURL + playername);
+        return this.http.delete(this.playerURL + playername, HttpOptions);
     }
 }

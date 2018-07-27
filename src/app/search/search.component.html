@@ -5,10 +5,14 @@
 <button mat-raised-button class="addPlayerBtn" (click)="openDialog()">Create Player</button>
 <br>
 
+<form [formGroup]="angForm" novalidate>
+  <div class="form-group">
+
 <mat-form-field>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
 
+<div class="mat-players-table">
 <table matSort style="margin: auto; width: 75%" mat-table [dataSource]="dataSource" class="mat-players-table">
 
   <ng-container matColumnDef="playername">
