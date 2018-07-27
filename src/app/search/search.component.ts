@@ -34,7 +34,7 @@ const PLAYER_DATA: Player[] = [
   templateUrl: 'search.component.html',
 })
 export class SearchPlayerComponent implements OnInit {
-  displayedColumns: string[] = ['playername', 'position', 'role', 'technical','mental','physical'];
+  displayedColumns: string[] = ['playername','position', 'role', 'technical','mental','physical',];
   dataSource = new MatTableDataSource(PLAYER_DATA);
 
   constructor(public dialog: MatDialog){}
@@ -49,8 +49,8 @@ export class SearchPlayerComponent implements OnInit {
   }
   openDialog(): void {
     let dialogRef = this.dialog.open(NewPlayerModelComponent, {
-      height: '40em',
-      width: '40em'
+      height: '23em',
+      width: '25em'
     });
 
     // dialogRef.afterClosed().subscribe(result => {

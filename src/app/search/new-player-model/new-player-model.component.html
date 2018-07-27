@@ -3,14 +3,15 @@
         <!-- (ngSubmit)="onAddPlayer()" -->
     <h3>Add Player</h3>
     <hr>
+<mat-grid-list></mat-grid-list>
 <div>
     Name:
-    <input formControlName="playername" class="form-control" type="text" name="playername">
+    <input formControlName="playername" class="form-control name" type="text" name="playername">
 </div>
 <div>
     Position:
     <select formControlName='position' name="position" class="position form-control">
-      <option value="mental">Select</option>
+      <option class="position-select">Select</option>
       <option value="forward">Forward</option>
       <option value="defense">Defense</option>
       <option value="goalie">Goalie</option>
@@ -20,7 +21,7 @@
 <div>
     Role:
     <select formControlName='role' name="role" class="role form-control">
-      <option value="mental">Select</option>
+      <option class="role-select">Select</option>
       <option value="target">Target</option>
       <option value="advanced">Advanced</option>
       <option value="pocher">Pocher</option>
@@ -29,7 +30,7 @@
 <div>
 Technical:
 <select formControlName='technical' name="technical" class="technical form-control">
-  <option value="Select">Select</option>
+  <option class="technical-select">Select</option>
   <option value=1>1</option>
   <option value=2>2</option>
   <option value=3>3</option>
@@ -55,52 +56,53 @@ Technical:
 <div>
 Mental:
 <select formControlName='mental' name="mental" class="mental form-control">
-  <option value="mental">Select</option>
-  <option value="mental">1</option>
-  <option value="mental">2</option>
-  <option value="mental">3</option>
-  <option value="mental">4</option>
-  <option value="mental">5</option>
-  <option value="mental">6</option>
-  <option value="mental">7</option>
-  <option value="mental">8</option>
-  <option value="mental">9</option>
-  <option value="mental">10</option>
-  <option value="mental">11</option>
-  <option value="mental">12</option>
-  <option value="mental">13</option>
-  <option value="mental">14</option>
-  <option value="mental">15</option>
-  <option value="mental">16</option>
-  <option value="mental">17</option>
-  <option value="mental">18</option>
-  <option value="mental">19</option>
-  <option value="mental">20</option>
+  <option>Select</option>
+  <option value=1>1</option>
+  <option value=2>2</option>
+  <option value=3>3</option>
+  <option value=4>4</option>
+  <option value=5>5</option>
+  <option value=6>6</option>
+  <option value=7>7</option>
+  <option value=8>8</option>
+  <option value=9>9</option>
+  <option value=10>10</option>
+  <option value=11>11</option>
+  <option value=12>12</option>
+  <option value=13>13</option>
+  <option value=14>14</option>
+  <option value=15>15</option>
+  <option value=16>16</option>
+  <option value=17>17</option>
+  <option value=18>18</option>
+  <option value=19>19</option>
+  <option value=20>20</option>
 </select>
 </div>
 <div>
 Physical:
 <select formControlName='physical' name="physical" class="physical form-control">
-  <option value="physical">1</option>
-  <option value="physical">2</option>
-  <option value="physical">3</option>
-  <option value="physical">4</option>
-  <option value="physical">5</option>
-  <option value="physical">6</option>
-  <option value="physical">7</option>
-  <option value="physical">8</option>
-  <option value="physical">9</option>
-  <option value="physical">10</option>
-  <option value="physical">11</option>
-  <option value="physical">12</option>
-  <option value="physical">13</option>
-  <option value="physical">14</option>
-  <option value="physical">15</option>
-  <option value="physical">16</option>
-  <option value="physical">17</option>
-  <option value="physical">18</option>
-  <option value="physical">19</option>
-  <option value="physical">20</option>
+  <option>Select</option>
+  <option value=1>1</option>
+  <option value=2>2</option>
+  <option value=3>3</option>
+  <option value=4>4</option>
+  <option value=5>5</option>
+  <option value=6>6</option>
+  <option value=7>7</option>
+  <option value=8>8</option>
+  <option value=9>9</option>
+  <option value=10>10</option>
+  <option value=11>11</option>
+  <option value=12>12</option>
+  <option value=13>13</option>
+  <option value=14>14</option>
+  <option value=15>15</option>
+  <option value=16>16</option>
+  <option value=17>17</option>
+  <option value=18>18</option>
+  <option value=19>19</option>
+  <option value=20>20</option>
 </select>
 </div>
 <div class="loginButtons">
