@@ -14,7 +14,7 @@ const HttpOptions = {
 })
 
 export class PlayerService {
-    private playerURL = 'http://localhost:3000/player/';
+    private playerURL = 'http://localhost:3000/player';
 
     constructor(private http: HttpClient, private router: Router) { }
 
@@ -31,7 +31,7 @@ export class PlayerService {
     }
 
     addPlayer(player: Player) {
-        return this.http.post(`${this.playerURL}create`, player);
+        return this.http.post(`${this.playerURL}/create`, player);
     }
 
     updatePlayer(player: Player) {

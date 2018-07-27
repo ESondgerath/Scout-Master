@@ -1,13 +1,14 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { MatSort, MatTableDataSource, MatPaginator, MatDialog, PageEvent } from '@angular/material';
 import { PlayerService } from '../services/player.service';
 import { NewPlayerModelComponent } from './new-player-model/new-player-model.component';
-import { Observable } from 'rxjs';
+import { Observable, fromEvent, merge } from 'rxjs';
 import { DataSource } from '@angular/cdk/collections';
 import { Player } from '../models/player';
 import { DatasourceService } from '../services/datasource.service';
 import { ActivatedRoute } from '../../../node_modules/@angular/router';
-import { tap } from 'rxjs/operators'
+import {debounceTime, distinctUntilChanged, startWith, tap, delay} from 'rxjs/operators';
+
 
 
 // export interface Player {
@@ -34,6 +35,8 @@ export class SearchPlayerComponent implements OnInit {
   // dataSource = new MatTableDataSource(PLAYER_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild('input') input: ElementRef;
 
   constructor(
     private playerService: PlayerService,

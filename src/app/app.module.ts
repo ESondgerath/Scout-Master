@@ -43,6 +43,7 @@ import {
   MatSnackBarModule,
   MatFormField,
   MatSortModule,
+  MatProgressSpinnerModule,
   } from "@angular/material";
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileNavbarComponent } from './profile/profile-navbar.component';
@@ -104,6 +105,7 @@ import { AlertsComponent } from './alerts/alerts.component';
     MatDialogModule,
     ReactiveFormsModule,
     MatSortModule,
+    MatProgressSpinnerModule,
   ],
   entryComponents:[
     NewPlayerModelComponent,

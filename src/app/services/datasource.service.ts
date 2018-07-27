@@ -13,19 +13,19 @@ export class DatasourceService implements DataSource<Player> {
 
   private playerSource = new BehaviorSubject<Player[]>([]);
   private loadingPlayer = new BehaviorSubject<boolean>(false);
-
   public loading$ = this.loadingPlayer.asObservable();
 
   constructor(private playerService: PlayerService) { }
   
   loadPlayer(
-    id: number,
-    filter = '',
-    sortDirection = 'asc',
-    pageIndex = 0,
-    pageSize = 15) {
+    filter: string,
+    sortDirection: string,
+    pageIndex: number,
+    pageSize: number) {
+
       this.loadingPlayer.next(true);
-      this.playerService.findPlayer(id, filter, sortDirection, pageIndex, pageSize).pipe(
+
+      this.playerService.findPlayer(filter, sortDirection, pageIndex, pageSize).pipe(
         catchError(() => of([])),
         finalize(() => this.loadingPlayer.next(false))
       )
@@ -33,6 +33,7 @@ export class DatasourceService implements DataSource<Player> {
     }
 
   connect(collectionViewer: CollectionViewer): Observable<Player[]> {
+    console.log("Connecting data source")
     return this.playerSource.asObservable();
   }
 
