@@ -14,19 +14,18 @@ const HttpOptions = {
 })
 
 export class PlayerService {
-    private playerURL = 'http://localhost:3000/player/';
+    private playerURL = 'http://localhost:3000/player';
 
     constructor(private http: HttpClient, private router: Router) { }
 
     //getAll
     getPlayer(): Observable<any> {
-        return this.http.get(this.playerURL);
+        return this.http.get(this.playerURL, HttpOptions);
     }
 
-    findPlayer(id:number, filter = '', sortOrder = "asc", pageNumber = 0, pageSize = 15): Observable<Player[]> {
+    findPlayer(filter = '', sortOrder = "asc", pageNumber = 0, pageSize = 15): Observable<Player[]> {
             return this.http.get(this.playerURL, {
                 params: new HttpParams()
-                    .set('id', id.toString())
                     .set('filter', filter)
                     .set('sortOrder', sortOrder)
                     .set('pageNumber', pageNumber.toString())
@@ -37,11 +36,11 @@ export class PlayerService {
         }
 
     getPlayerById(id: number): Observable<Player> {
-        return this.http.get<Player>(`${this.playerURL}details/` + id);
+        return this.http.get<Player>(`${this.playerURL}/details/${id}`);
     }
 
     addPlayer(player: Player) {
-        return this.http.post(`${this.playerURL}create`, player);
+        return this.http.post(`${this.playerURL}/create`, player);
     }
 
     updatePlayer(player: Player) {

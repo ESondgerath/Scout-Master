@@ -17,3 +17,37 @@ h3{
 .body{
     /* background-color: lightgreen; */
 }
+.leftSide{
+    background-color: lightcoral;
+}
+.one{
+    border: 1px solid black;
+}
+.two{
+    background-color: blue;
+}
+.bottom{
+    background-color: lightgray;
+}
+.rightSide{
+    background-color: lightgreen;
+}
+.jumbo{
+    background-image: url(https://www.youthareawesome.com/wp-content/uploads/2013/11/istock_all_sports_images.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.jack{
+        position: absolute;
+        top: 5px;
+}
+.fantasy{
+    text-decoration: underline;
+}
+.news{
+    text-decoration: underline;
+}
+.steve{
+    position: absolute;
+    top: 5px;
+}

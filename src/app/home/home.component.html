@@ -1,10 +1,51 @@
 <!-- <app-home-navbar></app-home-navbar> -->
 
-<div class="body">
-<h1>Scout Master</h1>
 
-
-<img class="homePic" mat-card-image src="https://images.unsplash.com/photo-1486286701208-1d58e9338013?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4bfa13437e17634e0e4a9213cb7acbfa&auto=format&fit=crop&w=1350&q=80">
-
-<h3>#1 Scouting App</h3>
-</div>
+<mat-grid-list cols="5" rowHeight="2:1">
+        <mat-grid-tile rowspan='2' colspan='5' class="jumbo"></mat-grid-tile>
+        <mat-grid-tile rowspan='3' colspan='1' class="leftSide">
+            <div class="jack">
+                <h3 class="fantasy" >Fantasy Sports</h3>
+                <ul>
+                    <li><a href="#">Basketball</a></li>
+                    <br>
+                    <li><a href="#">Football</a></li>
+                    <br>
+                    <li><a href="#">Soccer</a></li>
+                    <br>
+                    <li><a href="#">Hockey</a></li>
+                    <br>
+                    <li><a href="#">Golf</a></li>
+                    <br>
+                    <li><a href="#">Tennis</a></li>
+                </ul>
+            </div>   
+        </mat-grid-tile>
+        
+        <mat-grid-tile rowspan='3' colspan='3' class="bottom">
+        <div class="body">
+            <h1>Scout Master</h1>
+            <img class="homePic" mat-card-image src="https://images.unsplash.com/photo-1486286701208-1d58e9338013?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4bfa13437e17634e0e4a9213cb7acbfa&auto=format&fit=crop&w=1350&q=80">
+            <h3>#1 Scouting App</h3>
+        </div>
+    
+        </mat-grid-tile>
+        <mat-grid-tile rowspan='3' colspan='1' class="rightSide">
+            <div class="steve">
+                <h3 class="news">Top Headlines</h3>
+                <ul>
+                        <li><a href="#">Durant: Media 'trying to make me look crazy'</a></li>
+                        <br>
+                        <li><a href="#">Sources: Cubs land lefty Hamels from Rangers</a></li>
+                        <br>
+                        <li><a href="#">Yankees' Judge to hospital after HBP on wrist</a></li>
+                        <br>
+                        <li><a href="#">Blue Jays trade lefty Happ to Yanks for Drury</a></li>
+                        <br>
+                        <li><a href="#">LA Lakers trade Lebron for two 2nd round picks</a></li>
+                        <br>
+                        <li><a href="#">Pop turns down USA coaching job</a></li>
+                    </ul>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
