@@ -24,7 +24,7 @@ export class PlayerService {
     }
 
     findPlayer(filter = '', sortOrder = "asc", pageNumber = 0, pageSize = 15): Observable<Player[]> {
-            return this.http.get(this.playerURL, {
+            return this.http.get('http://localhost:3000/player', {
                 params: new HttpParams()
                     .set('filter', filter)
                     .set('sortOrder', sortOrder)
