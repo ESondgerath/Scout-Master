@@ -1,16 +1,17 @@
 .loginCard{
-    height: 50%;
+    height: 40%;
     width: 30%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
-    background-color:gray;
+    background-color: lightgray;
+
 }
 .loginButtons{
     margin-bottom: 5%;
     display: inline-block;
     width: 100%;
-    text-align-last: right;
+    text-align-last: center;
 }
 .loginButtons button:hover {
     color: #D9514E;
@@ -22,8 +23,13 @@
 }
 .noaccount a {
     text-decoration: none;
-    color: #D9514E;
+    color: darkblue;
 }
 .noaccount a:hover {
     text-decoration: underline;
 }
+/* .left{
+    background-image: url(https://images.complex.com/complex/images/c_limit,w_600/fl_lossy,pg_1,q_auto/vuwd3pxby9jvxrqks4kh/most-famous-soccer-neymar);
+    background-repeat: no-repeat;
+    
+} */

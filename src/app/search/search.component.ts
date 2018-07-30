@@ -5,10 +5,10 @@ import { NewPlayerModelComponent } from './new-player-model/new-player-model.com
 import { Observable, fromEvent, merge } from 'rxjs';
 import { DataSource } from '@angular/cdk/collections';
 import { Player } from '../models/player';
-import { DatasourceService } from '../services/datasource.service';
-import { ActivatedRoute } from '../../../node_modules/@angular/router';
-import {debounceTime, distinctUntilChanged, startWith, tap, delay} from 'rxjs/operators';
-
+// import { DatasourceService } from '../services/datasource.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { debounceTime, distinctUntilChanged, startWith, tap, delay } from 'rxjs/operators';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -16,50 +16,35 @@ import {debounceTime, distinctUntilChanged, startWith, tap, delay} from 'rxjs/op
   templateUrl: 'search.component.html',
 })
 
-export class SearchPlayerComponent implements OnInit, AfterViewInit {
-
-  player: Player;
-  dataSource: DatasourceService;
-  displayedColumns: string[] = ['playername', 'position', 'role', 'technical','mental','physical'];
+export class SearchPlayerComponent implements OnInit {
+  
+  dataSource = new PlayerDataSource(this.playerService);
+  // dataSource = new MatTableDataSource();
+  displayedColumns: string[] = ['playername','position', 'role', 'technical','mental','physical',];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild('input') input: ElementRef;
+  // @ViewChild('input') input: ElementRef;
 
   constructor(
     private playerService: PlayerService,
-    private route: ActivatedRoute,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private fb: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    // this.player = this.route.snapshot.data["player"]
-    this.dataSource = new DatasourceService(this.playerService);
-    this.dataSource.loadPlayer('', 'asc', 0, 15);
+
+    // this.playerService.getAllPlayers().subscribe((res) => {
+    //   this.dataSource = res.data;
+    //   console.log(res)
+    // });
   }
 
-  ngAfterViewInit() {
-
-    this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
-
-    fromEvent(this.input.nativeElement, 'keyup')
-      .pipe(
-        debounceTime(150),
-        distinctUntilChanged(),
-        tap(() => {
-          this.paginator.pageIndex = 0;
-
-          this.loadPlayerPage();
-        })
-      )
-      .subscribe();
-
-    merge(this.sort.sortChange, this.paginator.page)
-    .pipe(
-      tap(() => this.loadPlayerPage())
-    )
-    .subscribe();
-  }
+  // show(player) {
+  //   this.router.navigate(['players/', player.player_id]);
+  //   console.log(player);
+  // }
 
   openDialog(): void {
     let dialogRef = this.dialog.open(NewPlayerModelComponent, {
@@ -67,14 +52,14 @@ export class SearchPlayerComponent implements OnInit, AfterViewInit {
       width: '25em'
     });
   }
+}
 
-  loadPlayerPage() {
-    this.dataSource.loadPlayer(
-      this.input.nativeElement.value,
-      this.sort.direction,
-      this.paginator.pageIndex,
-      this.paginator.pageSize
-    );
+export class PlayerDataSource extends DataSource<any> {
+  constructor(private playerService: PlayerService) {
+    super();
   }
-
+  connect(): Observable<Player[]> {
+    return this.playerService.getPlayer();
+  }
+  disconnect() {}
 }

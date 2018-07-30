@@ -4,11 +4,11 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
-    background-color: #86bad3;
+    background-color: lightgray;
 }
 .cardForSignup a {
     text-decoration: none;
-    color: #D9514E;
+    color: darkblue;
 }
 .cardForSignup a:hover {
     text-decoration: underline;
