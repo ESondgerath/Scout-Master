@@ -60,8 +60,6 @@ import { AlertsComponent } from './alerts/alerts.component';
     AppComponent,
     HomeComponent,
     SearchPlayerComponent,
-    NavbarComponent,
-    FooterComponent,
     LayoutComponent,
     AuthComponent,
     SignupComponent,
