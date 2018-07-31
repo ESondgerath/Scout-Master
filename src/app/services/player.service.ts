@@ -42,7 +42,7 @@ export class PlayerService {
         return this.http.put(this.playerURL + player.playername, player, HttpOptions);
     }
 
-    deletePlayer(playername: string) {
-        return this.http.delete(this.playerURL + playername, HttpOptions);
+    deletePlayer(id: number) {
+        return this.http.delete(this.playerURL + '/deleteplayer/' + id, HttpOptions);
     }
 }
