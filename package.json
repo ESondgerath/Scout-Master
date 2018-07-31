@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
     "@material/form-field": "^0.37.1",
+    "@types/hammerjs": "^2.0.35",
     "angular-material": "^1.1.10",
     "angular-material-source": "github:angular/material",
     "core-js": "^2.5.4",
@@ -34,7 +35,8 @@
     "routing": "0.0.2",
     "rxjs": "^6.2.2",
     "serve": "^9.4.0",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "typescript": "~2.7.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.0",
@@ -44,9 +46,14 @@
     "@types/hammerjs": "^2.0.35",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "enhanced-resolve": "^3.3.0",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2"
+  },
+  "engines": {
+    "node": "^8.11.1",
+    "npm": "5.6.0"
   }
 }
