@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { APIURL } from '../../environments/environment.prod';
 
-const baseURL: string = "http://localhost:3000";
+// const baseURL: string = "http://localhost:3000";
+const userURL: string = `${APIURL}/user`;
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +18,11 @@ export class AuthenticationService {
     ) { }
 
   register(signupInfo) {
-      return this.http.post<any>(`${baseURL}/user/create`, signupInfo)
+      return this.http.post<any>(`${userURL}/create`, signupInfo)
   }
 
   login(loginInfo) {
-    return this.http.post<any>(`${baseURL}/user/login`, loginInfo)
+    return this.http.post<any>(`${userURL}/login`, loginInfo)
     .subscribe((res) => {
         localStorage.setItem("token", res.sessionToken)
         // localStorage.setItem("userid", res.user.body.id)
@@ -44,7 +46,7 @@ export class AuthenticationService {
   }
 
 //   updateUser() {
-//       return this.http.put(`${baseURL}/user/update/${localStorage}.id`)
+//       return this.http.put(`${userURL}/update/${localStorage}.id`)
 //   }
 
 }

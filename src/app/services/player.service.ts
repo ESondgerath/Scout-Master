@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { Player } from '../models/player';
 import { Router } from '@angular/router';
+import { APIURL } from '../../environments/environment.prod';
 
 const HttpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -14,7 +15,8 @@ const HttpOptions = {
 })
 
 export class PlayerService {
-    private playerURL = 'http://localhost:3000/player';
+    // private playerURL = 'http://localhost:3000/player';
+    private playerURL = `${APIURL}/player`;
 
     constructor(private http: HttpClient, private router: Router) { }
 
