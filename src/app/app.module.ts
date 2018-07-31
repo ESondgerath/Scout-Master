@@ -77,7 +77,7 @@ import { AlertsComponent } from './alerts/alerts.component';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    LayoutModule,
+    // LayoutModule,
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
