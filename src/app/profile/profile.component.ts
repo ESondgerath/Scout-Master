@@ -33,8 +33,8 @@ export class ProfileComponent implements OnInit {
     // this.getUserInfo();
   }
   
-  // onSubmit() {
+  onSubmit() {
 
-  // }
+  }
 
 }
