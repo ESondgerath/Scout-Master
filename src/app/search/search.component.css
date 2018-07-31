@@ -66,9 +66,11 @@ mat-headercell{
 }
 .createBtn{
   width: 24px;
+  float: right
 }
 .deleteBtn{
   width: 24px;
+  float: right;
 }
 .addBtn{
   width: 24px;
