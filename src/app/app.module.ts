@@ -13,7 +13,7 @@ import { SearchNavbarComponent } from './search/search-navbar/search-navbar.comp
 import { NavbarComponent } from './ui/navbar/navbar.component';
 import { HomeNavbarComponent } from './home/home-navbar.component';
 import { FooterComponent } from './ui/footer/footer.component';
-// import { LayoutComponent } from './ui/layout/layout.component';
+import { LayoutComponent } from './ui/layout/layout.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CdkTableModule } from '@angular/cdk/table';
 import { UserService } from './services/user.service';
@@ -60,7 +60,9 @@ import { AlertsComponent } from './alerts/alerts.component';
     AppComponent,
     HomeComponent,
     SearchPlayerComponent,
-    // LayoutComponent,
+    LayoutComponent,
+    NavbarComponent,
+    FooterComponent,
     AuthComponent,
     SignupComponent,
     LoginComponent,
@@ -77,7 +79,7 @@ import { AlertsComponent } from './alerts/alerts.component';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    // LayoutModule,
+    LayoutModule,
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
