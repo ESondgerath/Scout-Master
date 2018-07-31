@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --prod",
+    "start": "serve -s dist/scoutmaster"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +33,7 @@
     "material": "^0.3.0",
     "routing": "0.0.2",
     "rxjs": "^6.2.2",
+    "serve": "^9.4.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
