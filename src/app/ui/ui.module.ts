@@ -10,6 +10,7 @@ import { LayoutComponent } from './layout/layout.component';
     CommonModule
   ],
   declarations: [NavbarComponent, FooterComponent, LayoutComponent],
+  // exports: [LayoutComponent]
   exports: [LayoutComponent]
 })
 
