@@ -4,6 +4,7 @@
     <h3>Add Player</h3>
     <hr>
 
+    
 <div>
     Name:
     <input formControlName="playername" class="form-control name" type="text" name="playername">
@@ -98,7 +99,7 @@ Physical:
 </select>
 </div>
 <div class="loginButtons">
-  <button mat-raised-button class="submit" (click)="addPlayerToTable()">Submit</button>
+  <button mat-raised-button class="submit" (click)="addPlayerToTable(); closeModal()">Submit</button>
 </div>
 </form>
 </mat-card>

@@ -9,6 +9,7 @@ import { Player } from '../models/player';
 import { ActivatedRoute, Router } from '@angular/router';
 import { debounceTime, distinctUntilChanged, startWith, tap, delay } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { EditPlayerModalComponent } from './edit-player-modal/edit-player-modal.component';
 
 @Component({
   selector: 'app-search',
@@ -17,28 +18,36 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 })
 
 export class SearchPlayerComponent implements OnInit {
+
+  player: Player[];
   
   dataSource = new PlayerDataSource(this.playerService);
   // dataSource = new MatTableDataSource();
-  displayedColumns: string[] = ['playername','position', 'role', 'technical','mental','physical',];
+  displayedColumns: string[] = ['id', 'playername','position', 'role', 'technical','mental','physical', 'test'];
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  // @ViewChild(MatPaginator) paginator: MatPaginator;
+  // @ViewChild(MatSort) sort: MatSort;
+  editPlayerForm: FormGroup;
   // @ViewChild('input') input: ElementRef;
 
   constructor(
     private playerService: PlayerService,
     private dialog: MatDialog,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
-
-    // this.playerService.getAllPlayers().subscribe((res) => {
-    //   this.dataSource = res.data;
-    //   console.log(res)
-    // });
+  //   this.editPlayerForm = this.formBuilder.group({
+  //     id: [''],
+  //     playername: [''],
+  //     position: [''],
+  //     role: [''],
+  //     technical: [''],
+  //     mental: [''],
+  //     physical: ['']
+  //   })
   }
 
   // show(player) {
@@ -52,6 +61,30 @@ export class SearchPlayerComponent implements OnInit {
       width: '25em'
     });
   }
+
+  openEditDialog(playerId): void {
+    this.playerService.getPlayerById(playerId).subscribe(response => {
+      let dialogRef = this.dialog.open(EditPlayerModalComponent, {
+        height: '23em',
+        width: '25em',
+        data: {response}
+      });
+      console.log(response)
+    })
+    console.log(playerId);
+  }
+
+  
+
+  deletePlayerBtn(playerId): void {
+    console.log(playerId);
+    this.playerService.deletePlayer(playerId).subscribe()
+      // .subscribe(data => {
+      //   this.players = this.playerService.filter(i => i !== player)
+      // })
+      window.location.reload();
+  }
+
 }
 
 export class PlayerDataSource extends DataSource<any> {

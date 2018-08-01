@@ -30,8 +30,8 @@ export class PlayerService {
         return this.http.get<Player[]>(this.playerURL);
     }
 
-    getPlayerById(playername: string) {
-        return this.http.get(this.playerURL + playername, HttpOptions);
+    getPlayerById(id: number) {
+        return this.http.get(this.playerURL + '/details/' + id, HttpOptions);
     }
 
     addPlayer(player: Player) {
@@ -39,10 +39,10 @@ export class PlayerService {
     }
 
     updatePlayer(player: Player) {
-        return this.http.put(this.playerURL + player.playername, player, HttpOptions);
+        return this.http.put(`${this.playerURL}/edit/` + player.id, player, HttpOptions);
     }
 
     deletePlayer(id: number) {
-        return this.http.delete(this.playerURL + '/deleteplayer/' + id, HttpOptions);
+        return this.http.delete(`${this.playerURL}/deleteplayer/` + id, HttpOptions);
     }
 }
