@@ -12,9 +12,12 @@
     Team
   </button> -->
   <button class="nav-btn" mat-raised-button routerLink="/login">
-    Login/Logout
+    Login
   </button>
   <button class="nav-btn" mat-raised-button routerLink="/profile">
     Profile
+  </button>
+  <button class="nav-btn" mat-raised-button (click)="logoutBtn()" routerLink="/home">
+    Logout
   </button>
 </mat-toolbar>
