@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { MatDialogRef } from '@angular/material';
+import { UserService } from '../services/user.service';
 
 // export interface User {
 //   username: "Test";
@@ -25,12 +26,15 @@ export class ProfileComponent implements OnInit {
   constructor(
     // private auth: AuthenticationService,
     // private dialogRef: MatDialogRef<ProfileComponent>
+    public userService: UserService
   ) { }
 
   
 
   ngOnInit() {
     // this.getUserInfo();
+
+    console.log(this.userService.user);
   }
   
   onSubmit() {
