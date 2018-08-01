@@ -13,7 +13,9 @@ const HttpOptions = {
 export class UserService {
     private userURL = 'http://localhost:3000/user/';
 
-    constructor(private http: HttpClient) { }
+    constructor() { }
+
+    user: User;
 
     //getAll
     // getUser() {
