@@ -5,6 +5,7 @@ import { User } from '../models/user';
 import { Router } from '@angular/router';
 import { DeleteComponent } from './delete/delete.component';
 import { MatDialog } from '@angular/material';
+import { AuthenticationService } from '../services/authentication.service';
 
 
 @Component({
@@ -22,7 +23,8 @@ export class ProfileComponent implements OnInit {
     public userService: UserService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private auth: AuthenticationService
     //@Inject(UserService) private data: { response: User }
     // public data: User
     // @Inject(User) public data
@@ -52,9 +54,10 @@ export class ProfileComponent implements OnInit {
   //   console.log(userId)
   // }
 
-  deleteAccountBtn(userId): void {
-    console.log(userId);
-    this.userService.getUserById(userId).subscribe()
+  deleteAccountBtn(): void {
+    // this.userService.getUserById(this.editProfileForm.value.id).subscribe()
+    this.userService.delete(this.editProfileForm.value.id).subscribe()
+    this.auth.logoutUser()
   }
   
   onSubmit() {

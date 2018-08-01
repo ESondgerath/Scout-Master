@@ -34,7 +34,7 @@ export class UserService {
     }
 
     getUserById(id: number){
-        return this.http.get(this.userURL + id, HttpOptions);
+        return this.http.get(`${this.userURL}/` + id, HttpOptions);
     }
 
     // createUser(user: User) {
