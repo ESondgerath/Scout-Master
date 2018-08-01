@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
   constructor(
     public userService: UserService,
     private formBuilder: FormBuilder,
-    // @Inject(User) public data: { response: User }
+    @Inject(User) public data: { response: User }
     // public data: { response: User }
     // @Inject(User) public data
   ) { }
