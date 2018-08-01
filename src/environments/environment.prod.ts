@@ -5,8 +5,8 @@ export const environment = {
 export let APIURL = '';
 
 switch (window.location.hostname) {
-  case 'ejs-scoutmaster.herokuapp.com':
-    APIURL = 'https://ejs-scoutmaster-server.herokuapp.com'
+  case 'eja-scoutmaster.herokuapp.com':
+    APIURL = 'https://eja-scoutmaster-server.herokuapp.com'
     break;
   default:
     APIURL = 'http://localhost:3000';
