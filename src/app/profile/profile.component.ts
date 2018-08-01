@@ -1,44 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../services/authentication.service';
-import { MatDialogRef } from '@angular/material';
+import { Component, OnInit, Inject } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserService } from '../services/user.service';
-
-// export interface User {
-//   username: "Test";
-//   email: string;
-//   password: string;
-// }
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
+  providers: [ UserService ]
 })
 
 export class ProfileComponent implements OnInit {
 
-  username: string;
-  email: string;
-  password: string;
-  confirmpassword: string;
-  
+  editProfileForm: FormGroup;
+  // user: User
 
   constructor(
-    // private auth: AuthenticationService,
-    // private dialogRef: MatDialogRef<ProfileComponent>
-    public userService: UserService
+    public userService: UserService,
+    private formBuilder: FormBuilder,
+    // @Inject(User) public data: { response: User }
+    // public data: { response: User }
+    // @Inject(User) public data
   ) { }
 
-  
-
   ngOnInit() {
-    // this.getUserInfo();
-
+    console.log(this.data);
+    console.log(this.data.response);
+    this.editProfileForm = this.formBuilder.group({
+      id: [this.data.response.id],
+      username: [this.data.response.username],
+      email: [this.data.response.email],
+      password: [this.data.response.password]
+    });
     console.log(this.userService.user);
   }
   
   onSubmit() {
-
+    this.userService.updateProfile(this.editProfileForm.value)
+    .subscribe()
   }
 
 }

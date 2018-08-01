@@ -13,7 +13,6 @@ import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 export class EditPlayerModalComponent implements OnInit {
 
   editPlayerForm: FormGroup;
-  // submitted = false;
   player: Player
 
   constructor(
