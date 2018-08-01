@@ -39,7 +39,7 @@ export class AuthenticationService {
 
   logoutUser() {
       localStorage.removeItem('token')
-    //   this.router.navigate(['/home'])
+    //   this.router.navigate(['home'])
   }
 
   getToken() {

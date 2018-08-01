@@ -2,55 +2,50 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
-import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
-import { EditprofileComponent } from './editprofile/editprofile.component';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
-  // providers: [ UserService ]
 })
 
 export class ProfileComponent implements OnInit {
 
-  user: User[];
+  editProfileForm: FormGroup;
+  user: User
 
   constructor(
-    private userService: UserService,
-    private dialog: MatDialog
-    // @Inject(DATA) private data: { response: User }
-    // public data: { response: User }
+    public userService: UserService,
+    private formBuilder: FormBuilder,
+    private router: Router
+    //@Inject(UserService) private data: { response: User }
+    // public data: User
     // @Inject(User) public data
   ) { }
 
   ngOnInit() {
-    // console.log(this.data);
-    // console.log(this.data.response);
-    // this.editProfileForm = this.formBuilder.group({
-    //   id: [this.data.response.id],
-    //   username: [this.data.response.username],
-    //   email: [this.data.response.email],
-    //   password: [this.data.response.password]
-    // });
-    // console.log(this.userService.user);
+    //console.log(this.data);
+    //console.log(this.data.response);
+    this.editProfileForm = this.formBuilder.group({
+      id: [this.userService.user.id],
+      username: [this.userService.user.username],
+      email: [this.userService.user.email],
+      password: [this.userService.user.password]
+    });
+    console.log(this.userService.user);
+  }
+  
+  onSubmit() {
+    this.userService.updateProfile(this.editProfileForm.value)
+    .subscribe()
+    // window.location.reload();
+    this.router.navigate(['home']);
   }
 
-  // onSubmit() {
-  //   this.userService.updateProfile(this.editProfileForm.value)
-  //   .subscribe()
-  // }
-
-  openEditDialog(userId): void {
-    this.userService.getUserById(userId).subscribe(response => {
-      let dialogRef = this.dialog.open(EditprofileComponent, {
-        height: '23em',
-        width: '25em',
-        data: {response}
-      });
-      console.log(response)
-    })
+  deleteAccountBtn(userId): void {
     console.log(userId);
+    this.userService.delete(userId).subscribe()
   }
+
 }

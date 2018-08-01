@@ -53,8 +53,6 @@ import { NewPlayerModelComponent } from './search/new-player-model/new-player-mo
 import { AuthGuard } from './guard/auth.guard';
 import { AlertsComponent } from './alerts/alerts.component';
 import { EditPlayerModalComponent } from './search/edit-player-modal/edit-player-modal.component';
-import { EditprofileComponent } from './profile/editprofile/editprofile.component';
-
 
 @NgModule({
  declarations: [
