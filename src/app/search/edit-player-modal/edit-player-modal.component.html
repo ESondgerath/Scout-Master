@@ -1,0 +1,108 @@
+<mat-card class="addPlayerCard">
+  <form [formGroup]="editPlayerForm" >
+      <!-- (ngSubmit)="onAddPlayer()" -->
+  <h3>Edit Player</h3>
+  <hr>
+
+<div>
+  Name:
+  <input formControlName="playername" class="form-control name" type="text" name="playername">
+</div>
+<div>
+  Position:
+  <select formControlName='position' name="position" class="position form-control">
+    <option value="forward">Forward</option>
+    <option value="defense">Defense</option>
+    <option value="goalie">Goalie</option>
+  </select>
+</div>
+
+<div>
+  Role:
+  <select formControlName='role' name="role" class="role form-control">
+    <option value="target">Target</option>
+    <option value="advanced">Advanced</option>
+    <option value="pocher">Pocher</option>
+  </select>
+</div>
+<div>
+Technical:
+<select formControlName='technical' name="technical" class="technical form-control">
+<option value=1>1</option>
+<option value=2>2</option>
+<option value=3>3</option>
+<option value=4>4</option>
+<option value=5>5</option>
+<option value=6>6</option>
+<option value=7>7</option>
+<option value=8>8</option>
+<option value=9>9</option>
+<option value=10>10</option>
+<option value=11>11</option>
+<option value=12>12</option>
+<option value=13>13</option>
+<option value=14>14</option>
+<option value=15>15</option>
+<option value=16>16</option>
+<option value=17>17</option>
+<option value=18>18</option>
+<option value=19>19</option>
+<option value=20>20</option>
+</select>
+</div>
+<div>
+Mental:
+<select formControlName='mental' name="mental" class="mental form-control">
+<option value=1>1</option>
+<option value=2>2</option>
+<option value=3>3</option>
+<option value=4>4</option>
+<option value=5>5</option>
+<option value=6>6</option>
+<option value=7>7</option>
+<option value=8>8</option>
+<option value=9>9</option>
+<option value=10>10</option>
+<option value=11>11</option>
+<option value=12>12</option>
+<option value=13>13</option>
+<option value=14>14</option>
+<option value=15>15</option>
+<option value=16>16</option>
+<option value=17>17</option>
+<option value=18>18</option>
+<option value=19>19</option>
+<option value=20>20</option>
+</select>
+</div>
+<div>
+Physical:
+<select formControlName='physical' name="physical" class="physical form-control">
+<option value=1>1</option>
+<option value=2>2</option>
+<option value=3>3</option>
+<option value=4>4</option>
+<option value=5>5</option>
+<option value=6>6</option>
+<option value=7>7</option>
+<option value=8>8</option>
+<option value=9>9</option>
+<option value=10>10</option>
+<option value=11>11</option>
+<option value=12>12</option>
+<option value=13>13</option>
+<option value=14>14</option>
+<option value=15>15</option>
+<option value=16>16</option>
+<option value=17>17</option>
+<option value=18>18</option>
+<option value=19>19</option>
+<option value=20>20</option>
+</select>
+</div>
+<div class="loginButtons">
+<button mat-raised-button class="submit" (click)="editPlayerBtn(); closeModal()">Submit</button>
+</div>
+</form>
+</mat-card>
+

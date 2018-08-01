@@ -3,7 +3,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldControl} from '@angular/material';
 import { NgForm, FormGroup, FormBuilder } from '@angular/forms';
-import { PlayerService } from '../../services/player.service'
+import { PlayerService } from '../../services/player.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-player-model',
@@ -18,7 +19,9 @@ export class NewPlayerModelComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private playerService: PlayerService
+    private playerService: PlayerService,
+    private router: Router,
+    private dialogRef: MatDialogRef<any>,
   ) { }
 
   ngOnInit() {
@@ -35,6 +38,16 @@ export class NewPlayerModelComponent implements OnInit {
   addPlayerToTable(){
   //  this.submitted= true;
    this.playerService.addPlayer(this.newPlayerForm.value)
-   .subscribe()
+   .subscribe(
+     data=> {
+     this.router.navigate(['/players'])
+     }
+    )
+    window.location.reload();
   }
+
+  closeModal() {
+    this.dialogRef.close()
+  }
+
 }

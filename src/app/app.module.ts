@@ -52,6 +52,7 @@ import { TeamNavbarComponent } from './team/team-navbar.component';
 import { NewPlayerModelComponent } from './search/new-player-model/new-player-model.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AlertsComponent } from './alerts/alerts.component';
+import { EditPlayerModalComponent } from './search/edit-player-modal/edit-player-modal.component';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { AlertsComponent } from './alerts/alerts.component';
     SearchNavbarComponent,
     TeamNavbarComponent,
     NewPlayerModelComponent,
+    EditPlayerModalComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -109,6 +111,7 @@ import { AlertsComponent } from './alerts/alerts.component';
   ],
   entryComponents:[
     NewPlayerModelComponent,
+    EditPlayerModalComponent,
   ],
   providers: [UserService, PlayerService, AuthGuard],
   bootstrap: [ AppComponent ]

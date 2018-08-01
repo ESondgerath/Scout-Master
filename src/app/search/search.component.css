@@ -51,18 +51,21 @@ mat-headercell{
   background-color: #2fef3c;
   border-radius: 10%;
   font-size: 23px;
+  float: right;
 }
 .editPlayer{
   color: black;
   background-color: #efef2d;
   border-radius: 10%;
   font-size: 20px;
+  float: right;
 }
 .deletePlayer{
   color: black;
   background-color: #d64942;
   border-radius: 10%;
   font-size: 20px;
+  float: right;
 }
 .createBtn{
   width: 24px;
