@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
+import { DeleteComponent } from './delete/delete.component';
+import { MatDialog } from '@angular/material';
+
 
 @Component({
   selector: 'app-profile',
@@ -18,7 +21,8 @@ export class ProfileComponent implements OnInit {
   constructor(
     public userService: UserService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
     //@Inject(UserService) private data: { response: User }
     // public data: User
     // @Inject(User) public data
@@ -35,6 +39,23 @@ export class ProfileComponent implements OnInit {
     });
     console.log(this.userService.user);
   }
+
+  // deleteAccountBtn(userId): void {
+  //   this.userService.getUserById(userId).subscribe(response => {
+  //     let dialogRef = this.dialog.open(DeleteComponent, {
+  //       height: '23em',
+  //       width: '25em',
+  //       data: {response}
+  //     });
+  //     console.log(response)
+  //   })
+  //   console.log(userId)
+  // }
+
+  deleteAccountBtn(userId): void {
+    console.log(userId);
+    this.userService.getUserById(userId).subscribe()
+  }
   
   onSubmit() {
     this.userService.updateProfile(this.editProfileForm.value)
@@ -42,10 +63,4 @@ export class ProfileComponent implements OnInit {
     // window.location.reload();
     this.router.navigate(['home']);
   }
-
-  deleteAccountBtn(userId): void {
-    console.log(userId);
-    this.userService.delete(userId).subscribe()
-  }
-
 }

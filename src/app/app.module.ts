@@ -53,6 +53,7 @@ import { NewPlayerModelComponent } from './search/new-player-model/new-player-mo
 import { AuthGuard } from './guard/auth.guard';
 import { AlertsComponent } from './alerts/alerts.component';
 import { EditPlayerModalComponent } from './search/edit-player-modal/edit-player-modal.component';
+import { DeleteComponent } from './profile/delete/delete.component';
 
 @NgModule({
  declarations: [
@@ -76,6 +77,7 @@ import { EditPlayerModalComponent } from './search/edit-player-modal/edit-player
     TeamNavbarComponent,
     NewPlayerModelComponent,
     EditPlayerModalComponent,
+    DeleteComponent,
   ],
   imports: [
     AppRoutingModule,
