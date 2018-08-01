@@ -2,7 +2,7 @@
     width: 90%;
     height: 1200px;
     margin: auto;
-
+    /* background-image: url("../assets/soccerField.png"); */
     background-repeat: no-repeat;
     background-size: cover;
     border: 2px solid green;
